@@ -4,7 +4,7 @@
 **Course:** Introduction to Deep Learning  
 **Professor:** Flávio Figueiredo  
 
-## 📌 Final Project — Image-to-Text (Image Captioning)
+## Final Project — Image-to-Text (Image Captioning)
 
 Authors:
 - Igor Eduardo Martins Braga — igoreduardobraga@ufmg.br 
@@ -13,7 +13,7 @@ Authors:
 
 ---
 
-## 🧠 Project Overview
+## Project Overview
 
 This project compares two distinct approaches for the task of **automatically generating image captions** (Image Captioning):
 
@@ -24,21 +24,21 @@ Image captioning is a challenging task that combines **Computer Vision** and **N
 
 ---
 
-## 🏗️ Model Architectures
+## Model Architectures
 
-### 🔷 CNN + RNN (Custom Implementation)
+### CNN + RNN (Custom Implementation)
 - **Encoder:** Pre-trained ResNet-50 (frozen), projecting images into embedding space.
 - **Decoder:** LSTM with word embeddings and linear projection to vocabulary.
 - **Training:** Adam optimizer, CrossEntropyLoss (ignoring `<PAD>`), and evaluation using BLEU and WER scores.
 
-### 🔷 BLIP (Pre-trained)
+### BLIP (Pre-trained)
 - Based on the `Salesforce/blip-image-captioning-base` model from Hugging Face.
 - Fine-tuned on flower images with human-written captions.
 - Evaluation using `transformers.Trainer` with BLEU and WER metrics.
 
 ---
 
-## 🖼️ Dataset
+## Dataset
 
 - **Oxford 102 Flowers**: 8,189 images across 102 flower categories.
 - We randomly selected **5,000 images**, using **1 caption per image**.
@@ -49,7 +49,7 @@ Image captioning is a challenging task that combines **Computer Vision** and **N
 
 ---
 
-## ⚙️ Training Setup
+## Training Setup
 
 | Hyperparameter     | Value                  |
 |--------------------|------------------------|
@@ -64,9 +64,9 @@ BLEU and WER metrics were monitored throughout training to assess the quality of
 
 ---
 
-## 📊 Results
+## Results
 
-### ✅ BLIP Model (Pre-trained)
+### BLIP Model (Pre-trained)
 
 | Metric         | Test Value   |
 |----------------|--------------|
@@ -74,7 +74,7 @@ BLEU and WER metrics were monitored throughout training to assess the quality of
 | BLEU Score     | **0.3336**   |
 | WER            | **0.4546**   |
 
-### 🔧 CNN + RNN Model
+### CNN + RNN Model
 
 | Metric         | Test Value   |
 |----------------|--------------|
@@ -82,7 +82,7 @@ BLEU and WER metrics were monitored throughout training to assess the quality of
 | BLEU Score     | 0.1306       |
 | WER            | 0.8168       |
 
-### 📌 Conclusions
+### Conclusions
 
 - The **BLIP model** outperformed the custom CNN+RNN model across all metrics.
 - The custom model suffered from **overfitting starting from epoch 4**.
@@ -90,7 +90,7 @@ BLEU and WER metrics were monitored throughout training to assess the quality of
 
 ---
 
-## 💡 Future Improvements
+## Future Improvements
 
 - Incorporate **attention mechanisms** (e.g., Attention layers, Transformers).
 - Apply **beam search** during caption generation.
@@ -99,7 +99,7 @@ BLEU and WER metrics were monitored throughout training to assess the quality of
 
 ---
 
-## 📚 References
+## References
 
 - [Oxford 102 Flowers Dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/)
 - [Hugging Face: Salesforce/blip-image-captioning-base](https://huggingface.co/Salesforce/blip-image-captioning-base)
